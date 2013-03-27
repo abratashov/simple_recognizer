@@ -1,0 +1,27 @@
+#language {width: 200px;}
+
+#reconized_string {
+  width: 100%;
+  height: 30px;
+}
+
+#page {
+  margin: 2px;
+  height: 60%;
+  width: 100%;
+}
+
+#keyboard{
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.left_margin {margin-left: 10px;}
+
+.small_font {font-size: 90%;}
+
+.big_font {font-size: 120%;}
+
+.right_align {text-align:right;}
+
+.shadow {display: none;}
