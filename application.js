@@ -99,7 +99,7 @@ var languages = {                     //supported languages by 'x-webkit-speech'
     'Portuguese': 'pt-PT',
     'Portuguese (brasil)': 'pt-BR',
     'Romanian': 'ro-RO',
-    'Russian Federation': 'ru',
+    'Russian': 'ru',
     'Serbian': 'sr-SP',
     'Slovak': 'sk',
     'Spanish (Argentina)': 'es-AR',
@@ -127,74 +127,65 @@ var languages = {                     //supported languages by 'x-webkit-speech'
     'Zulu': 'zu',
 }
 
-var redirections = {                  //unsupported languages by 'x-webkit-speech' but most similar to the adjacent supported 
-    'Ukraine': 'Russian Federation',
-    'Belarus': 'Russian Federation',
+var redirect_langs = {                  //unsupported languages by 'x-webkit-speech' but most similar to the adjacent supported 
+    'Ukrainian': 'Russian',
 }
 
-var logos = {
-    OINA: {url: 'http://www.acropolis.org/', logo: 'oina'},
-    Argentina: {url: 'http://www.nueva-acropolis.org.ar/', logo: 'oina'},
-    Australia: {url: 'http://www.acropolis.org.au/', logo: 'oina'},
-    Austria: {url: 'http://www.neueakropolis.org/', logo: 'oina'},
-    Belgium: {url: 'http://www.nouvelle-acropole.be/', logo: 'oina'},
-    Bolivia: {url: 'http://www.acropolis.com.bo/', logo: 'oina'},
-    'Brazil North': {url: 'http://www.acropole.org.br/', logo: 'oina'},
-    'Brazil South': {url: 'http://www.nova-acropole.org.br/', logo: 'oina'},
-    Bulgaria: {url: 'http://www.akropol.bg/', logo: 'oina'},
-    Canada: {url: 'http://www.newacropolis.ca/', logo: 'oina'},
-    Chile: {url: 'http://www.nueva-acropolischile.org/', logo: 'oina'},
-    Colombia: {url: 'http://www.acropoliscolombia.org/', logo: 'oina'},
-    'Costa Rica': {url: 'http://www.acropolis.or.cr/', logo: 'oina'},
-    Croatia: {url: 'http://www.nova-akropola.hr/', logo: 'oina'},
-    'Czech Republic': {url: 'http://www.akropolis.cz/', logo: 'oina'},
-    'Dominican Republic': {url: 'http://www.acropolis.org.do/', logo: 'oina'},
-    Ecuador: {url: 'http://www.oinae.org/', logo: 'oina'},
-    'El Salvador': {url: 'http://www.acropolis.org.sv/', logo: 'oina'},
-    France: {url: 'http://www.nouvelle-acropole.fr/', logo: 'oina'},
-    Germany: {url: 'http://www.neueakropolis.de/', logo: 'oina'},
-    Greece: {url: 'http://www.nea-acropoli.gr/', logo: 'oina'},
-    Guatemala: {url: 'http://www.nuevaacropolis.org.gt/', logo: 'oina'},
-    Honduras: {url: 'http://www.acropolishonduras.org/', logo: 'oina'},
-    Hungary: {url: 'http://www.ujakropolisz.hu/', logo: 'oina'},
-    'India North': {url: 'http://www.acropolis.org.in/', logo: 'oina'},
-    'India South': {url: 'http://www.newacropolis.in/', logo: 'oina'},
-    Ireland: {url: 'http://www.newacropolis-ireland.org/', logo: 'oina'},
-    Israel: {url: 'http://www.newacropolis.org.il/', logo: 'oina'},
-    Italy: {url: 'http://www.nuovaacropoli.it/', logo: 'oina'},
-    Japan: {url: 'http://www.acropolis.jp/', logo: 'oina'},
-    Mexico: {url: 'http://www.acropolis.org.mx/', logo: 'oina'},
-    Nicaragua: {url: 'http://www.acropolisnicaragua.org/', logo: 'oina'},
-    Panama: {url: 'http://www.acropolis.org.pa/', logo: 'oina'},
-    Paraguay: {url: 'http://www.acropolisparaguay.org/', logo: 'oina'},
-    Peru: {url: 'http://www.acropolisperu.org/', logo: 'oina'},
-    Poland: {url: 'http://www.nowa-akropolis.pl/', logo: 'oina'},
-    Portugal: {url: 'http://www.nova-acropole.pt/', logo: 'oina'},
-    Romania: {url: 'http://www.noua-acropola.ro/', logo: 'oina'},
-    'Russian Federation': {url: 'http://www.newacropol.ru/', logo: 'oina'},
-    'Serbia Republic': {url: 'http://www.nova-akropola.rs/', logo: 'oina'},
-    Slovakia: {url: 'http://www.akropolis.sk/', logo: 'oina'},
-    Slovenia: {url: 'http://www.akropola.org/', logo: 'oina'},
-    'South Africa': {url: 'http://www.newacropolis.org.za/', logo: 'oina'},
-    Spain: {url: 'http://www.nueva-acropolis.es/', logo: 'oina'},
-    Switzerland: {url: 'http://www.nouvelle-acropole.ch/', logo: 'oina'},
-    Ukraine: {url: 'http://www.newacropolis.org.ua/', logo: 'oina'},
-    'United Kingdom': {url: 'http://www.newacropolisuk.org/', logo: 'oina'},
-    Uruguay: {url: 'http://www.acropolis.org.uy/', logo: 'oina'},
-    USA: {url: 'http://www.newacropolisusa.org/', logo: 'oina'},
+var countries = {
+    OINA: {url: 'http://www.acropolis.org/', logo: 'oina', lang: 'English(US)'},
+    Argentina: {url: 'http://www.nueva-acropolis.org.ar/', logo: 'oina', lang: 'Spanish (Argentina)'},
+    Australia: {url: 'http://www.acropolis.org.au/', logo: 'oina', lang: 'English (Australia)'},
+    Austria: {url: 'http://www.neueakropolis.org/', logo: 'oina', lang: 'German'},
+    Belgium: {url: 'http://www.nouvelle-acropole.be/', logo: 'oina', lang: 'English(US)'},                         //?
+    Bolivia: {url: 'http://www.acropolis.com.bo/', logo: 'oina', lang: 'Spanish(Bolivia)'},
+    Brazil: {url: 'http://www.acropole.org.br/', logo: 'oina', lang: 'Portuguese (brasil)'},
+    Bulgaria: {url: 'http://www.akropol.bg/', logo: 'oina', lang: 'Bulgarian'},
+    Canada: {url: 'http://www.newacropolis.ca/', logo: 'oina', lang: 'English (Canada)'},
+    Chile: {url: 'http://www.nueva-acropolischile.org/', logo: 'oina', lang: 'Spanish( Chile)'},
+    Colombia: {url: 'http://www.acropoliscolombia.org/', logo: 'oina', lang: 'Spanish (Colombia)'},
+    'Costa Rica': {url: 'http://www.acropolis.or.cr/', logo: 'oina', lang: 'Spanish(Costa Rica)'},
+    Croatia: {url: 'http://www.nova-akropola.hr/', logo: 'oina', lang: 'English(US)'},                             //?
+    'Czech Republic': {url: 'http://www.akropolis.cz/', logo: 'oina', lang: 'Czech'},
+    'Dominican Republic': {url: 'http://www.acropolis.org.do/', logo: 'oina', lang: 'Spanish(Dominican Republic)'},
+    Ecuador: {url: 'http://www.oinae.org/', logo: 'oina', lang: 'Spanish(Ecuador)'},
+    'El Salvador': {url: 'http://www.acropolis.org.sv/', logo: 'oina', lang: 'Spanish(El Salvador)'},
+    France: {url: 'http://www.nouvelle-acropole.fr/', logo: 'oina', lang: 'French'},
+    Germany: {url: 'http://www.neueakropolis.de/', logo: 'oina', lang: 'German'},
+    Greece: {url: 'http://www.nea-acropoli.gr/', logo: 'oina', lang: 'English(US)'},                              //?
+    Guatemala: {url: 'http://www.nuevaacropolis.org.gt/', logo: 'oina', lang: 'Spanish(Guatemala)'},
+    Honduras: {url: 'http://www.acropolishonduras.org/', logo: 'oina', lang: 'Spanish(Honduras)'},
+    Hungary: {url: 'http://www.ujakropolisz.hu/', logo: 'oina', lang: 'Hungarian'},
+    India: {url: 'http://www.acropolis.org.in/', logo: 'oina', lang: 'English(US)'},                      //?
+    //Ireland: {url: 'http://www.newacropolis-ireland.org/', logo: 'oina', lang: 'English(US)'},                    //?
+    Israel: {url: 'http://www.newacropolis.org.il/', logo: 'oina', lang: 'Hebrew'},
+    Italy: {url: 'http://www.nuovaacropoli.it/', logo: 'oina', lang: 'Italian'},
+    Japan: {url: 'http://www.acropolis.jp/', logo: 'oina', lang: 'Japanese'},
+    Mexico: {url: 'http://www.acropolis.org.mx/', logo: 'oina', lang: 'Spanish(Mexico)'},
+    Nicaragua: {url: 'http://www.acropolisnicaragua.org/', logo: 'oina', lang: 'Spanish(Nicaragua)'},
+    Panama: {url: 'http://www.acropolis.org.pa/', logo: 'oina', lang: 'Spanish(Panama)'},
+    Paraguay: {url: 'http://www.acropolisparaguay.org/', logo: 'oina', lang: 'Spanish(Paraguay)'},
+    Peru: {url: 'http://www.acropolisperu.org/', logo: 'oina', lang: 'Spanish(Peru)'},
+    Poland: {url: 'http://www.nowa-akropolis.pl/', logo: 'oina', lang: 'Polish'},
+    Portugal: {url: 'http://www.nova-acropole.pt/', logo: 'oina', lang: 'Portuguese'},
+    Romania: {url: 'http://www.noua-acropola.ro/', logo: 'oina', lang: 'Romanian'},
+    'Russian Federation': {url: 'http://www.newacropol.ru/', logo: 'oina', lang: 'Russian'},
+    Serbia: {url: 'http://www.nova-akropola.rs/', logo: 'oina', lang: 'Serbian'},
+    Slovakia: {url: 'http://www.akropolis.sk/', logo: 'oina', lang: 'Slovak'},
+    Slovenia: {url: 'http://www.akropola.org/', logo: 'oina', lang: 'English(US)'},                               //?
+    'South Africa': {url: 'http://www.newacropolis.org.za/', logo: 'oina', lang: 'English (South Africa)'},
+    Spain: {url: 'http://www.nueva-acropolis.es/', logo: 'oina', lang: 'Spanish(Spain)'},
+    Switzerland: {url: 'http://www.nouvelle-acropole.ch/', logo: 'oina', lang: 'German'},
+    Ukraine: {url: 'http://www.newacropolis.org.ua/', logo: 'oina', lang: 'Ukrainian'},
+    'United Kingdom': {url: 'http://www.newacropolisuk.org/', logo: 'oina', lang: 'English(UK)'},
+    Uruguay: {url: 'http://www.acropolis.org.uy/', logo: 'oina', lang: 'Spanish(Uruguay)'},
+    'United States': {url: 'http://www.newacropolisusa.org/', logo: 'oina', lang: 'English(US)'},
 }
 
 $(document).ready(function() {
     var detected = detectLocation();
-
+    console.log(detected);
     if (detected.country)
         $('#country').html(detected.country);
-
-    if (!_.has(languages, detected.country))
-        if (_.has(redirections, detected.country))
-            if (_.has(languages, redirections[detected.country]))
-                detected.lang = languages[redirections[detected.country]];
-
 
     var html_lang = 'select#language'
     _.each(languagesList(detected.lang), function(el){
@@ -213,8 +204,7 @@ $(document).ready(function() {
     $('#reconized_string').focus();
     var text = [];
     $('body').keypress(function(e) {
-        console.log(e.which);
-        // && e.srcElement.id == 'search_string'){
+        //console.log(e.which);
         e.preventDefault();
         var phrase;
 
@@ -254,30 +244,28 @@ $(document).ready(function() {
     };
 
     function detectLocation() {
-        var country_name = geoip_country_name();
+        var detected = {
+            country: geoip_country_name(),
+            lang: window.navigator.userLanguage || window.navigator.language
+        };
 
-        var detected = {country: country_name, lang: window.navigator.userLanguage || window.navigator.language};
-
-        _.each(languages, function(value, key){
-            var pattern = RegExp(country_name, 'i');
+        _.each(countries, function(value, key){
+            var pattern = RegExp(detected.country, 'i');
             try {
-                if (pattern.exec(key).length > 0)
-                    detected.lang = value;
-            }
-            catch(err) {
-                //console.log(err);
-            }
-        });
-
-        _.each(logos, function(value, key){
-            var pattern = RegExp(country_name, 'i');
-            try {
-                if (pattern.exec(key).length > 0) {
-                    if (country_name && logos[country_name]) {
-                        detected.logo = logos[country_name].logo;
-                        detected.url = logos[country_name].url;
+                if (pattern.exec(key).length > 0){
+                    if (_.has(redirect_langs, value.lang)) {
+                        if (_.has(languages, redirect_langs[value.lang]))
+                            detected.lang = languages[redirect_langs[value.lang]];
+                    } else {
+                        if (_.has(languages, value.lang))
+                            detected.lang = languages[value.lang];
                     }
-                    console.log(country);
+
+                    if (detected.country && countries[detected.country]) {
+                        detected.logo = countries[detected.country].logo;
+                        detected.url = countries[detected.country].url;
+                    }
+                    //console.log(country);
                 }
             }
             catch(err) {
@@ -286,8 +274,8 @@ $(document).ready(function() {
         });
 
         if (!detected.logo) {
-            detected.logo = logos['OINA'].logo;
-            detected.url = logos['OINA'].url;
+            detected.logo = countries['OINA'].logo;
+            detected.url = countries['OINA'].url;
         }
         return detected;
     };

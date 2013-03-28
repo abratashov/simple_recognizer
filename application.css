@@ -27,3 +27,8 @@
 .right_align {text-align:right;}
 
 .shadow {display: none;}
+
+.public_license {
+  text-align: right;
+  font-style: italic;
+}
