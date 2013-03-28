@@ -7,20 +7,22 @@
 
 #page {
   margin: 2px;
-  height: 60%;
+  height: 55%;
   width: 100%;
 }
 
 #keyboard{
-  margin-left: 10px;
+  margin-left: 5px;
   margin-top: 10px;
 }
 
 .left_margin {margin-left: 10px;}
 
+.tiny_font {font-size: 80%;}
 .small_font {font-size: 90%;}
-
 .big_font {font-size: 120%;}
+
+.italic_font{font-style: italic;}
 
 .right_align {text-align:right;}
 

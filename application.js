@@ -194,6 +194,9 @@ $(document).ready(function() {
     $('#logo').attr('src', 'images/oina/oina_logo_' + detected.logo + '.png');
     $('#site').attr('href', detected.url);
 
+    if (geoip_country_name())
+        $('#country').html(geoip_country_name());
+
     $('#reconized_string').focus();
     var text = [];
     $('body').keypress(function(e) {
