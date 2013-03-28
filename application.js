@@ -46,7 +46,7 @@ var codes = {
     '57': '9',
 }
 
-var languages = {
+var languages = {                     //supported languages by 'x-webkit-speech' 
     'Afrikaans': 'af',
     'Basque': 'eu',
     'Bulgarian': 'bg',
@@ -127,6 +127,11 @@ var languages = {
     'Zulu': 'zu',
 }
 
+var redirections = {                  //unsupported languages by 'x-webkit-speech' but most similar to the adjacent supported 
+    'Ukraine': 'Russian Federation',
+    'Belarus': 'Russian Federation',
+}
+
 var logos = {
     OINA: {url: 'http://www.acropolis.org/', logo: 'oina'},
     Argentina: {url: 'http://www.nueva-acropolis.org.ar/', logo: 'oina'},
@@ -181,11 +186,22 @@ var logos = {
 
 $(document).ready(function() {
     var detected = detectLocation();
-    
+
+    if (detected.country)
+        $('#country').html(detected.country);
+
+    if (!_.has(languages, detected.country))
+        if (_.has(redirections, detected.country))
+            if (_.has(languages, redirections[detected.country]))
+                detected.lang = languages[redirections[detected.country]];
+
+
     var html_lang = 'select#language'
-     _.each(languagesList(detected.lang), function(el){
+    _.each(languagesList(detected.lang), function(el){
         $(html_lang).append(el);
     });
+
+    $('#reconized_string').attr('lang', detected.lang);
 
     $(html_lang).change(function() {
         $('#reconized_string').attr('lang', $(html_lang).val());
@@ -193,9 +209,6 @@ $(document).ready(function() {
 
     $('#logo').attr('src', 'images/oina/oina_logo_' + detected.logo + '.png');
     $('#site').attr('href', detected.url);
-
-    if (geoip_country_name())
-        $('#country').html(geoip_country_name());
 
     $('#reconized_string').focus();
     var text = [];
@@ -243,7 +256,7 @@ $(document).ready(function() {
     function detectLocation() {
         var country_name = geoip_country_name();
 
-        var detected = {lang: window.navigator.userLanguage || window.navigator.language};
+        var detected = {country: country_name, lang: window.navigator.userLanguage || window.navigator.language};
 
         _.each(languages, function(value, key){
             var pattern = RegExp(country_name, 'i');
