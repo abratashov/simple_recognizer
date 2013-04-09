@@ -7,8 +7,9 @@
 
 #page {
   margin: 2px;
-  height: 55%;
+  height: 45%;
   width: 100%;
+  overflow: auto;
 }
 
 #keyboard{

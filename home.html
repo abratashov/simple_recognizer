@@ -7,10 +7,10 @@
     <meta name='description" content='Simple speech recognition online'>
     <meta name='author' content='PhlowerTeam'>
 
-    <link href='http://twitter.github.com/bootstrap/assets/css/bootstrap.css' rel='stylesheet'>
+    <link href='bootstrap.min.css' rel='stylesheet'>
     <link href='application.css' rel='stylesheet'>
-    <script src='http://code.jquery.com/jquery-1.9.1.min.js' type='text/javascript'></script>
-    <script src='http://underscorejs.org/underscore-min.js' type='text/javascript'></script>
+    <script src='jquery-1.9.1.min.js' type='text/javascript'></script>
+    <script src='underscore-min.js' type='text/javascript'></script>
     <script src='http://j.maxmind.com/app/geoip.js' type='text/javascript'></script>
     <script src='application.js' type='text/javascript'></script>
 
@@ -29,6 +29,8 @@
 
   </head>
   <body>
+
+
     <br>
     <div class='row-fluid'>
       <div class='span1'>
@@ -38,18 +40,33 @@
       </div>
       <div class='span6'>
         <p><span class='big_font'><strong>Simple speech recognizer</strong></span> is supported in browsers with <em>x-webkit-speech</em> such as Chrome</p>
-
       </div>
       <div class='span3 offset2 '>
         <select id='language'>
         <input class='shadow'>
       </div>
     </div>
+
+
     <div class='row-fluid left_margin small_font'>
-      <div class='span1 right_align'>
-        <br><br>
-        For entering speech click microphone icon.
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <div class='span1 right_align'></div>
+      <div class='span10'>
+        <input id='reconized_string' lang='en-US' placeholder='For entering speech click microphone icon -->' type='text' x-webkit-speech='x-webkit-speech'>
+        <br>
+        <legend>Page</legend>          
+        <fieldset id='page' ></fieldset>
+        
+      </div>
+      <div class='span1'>
+        <a href='/' id='site' class='shadow'>
+          <img src='' id='logo'>
+        </a>
+      </div>
+    </div>
+
+
+    <div class='row-fluid left_margin small_font'>
+      <div class='span1'>
         '<b>p</b>' - paste recognized speech to page
         <br><br>
         '<b>r</b>' - remove last added text element
@@ -57,9 +74,6 @@
         '<b>m</b>' - call manually entering the text
       </div>
       <div class='span10'>
-        <input id='reconized_string' lang='en-US' placeholder='Click microphone -->' type='text' x-webkit-speech='x-webkit-speech'>
-        <br>
-        <textarea id='page' placeholder='Page' readonly='readonly'></textarea>
         <img src='images/keyboard.png' id='keyboard'>
         <br>
         <div id='country' class='left_margin italic_font tiny_font'></div>
@@ -73,12 +87,7 @@
           </div>
         </div>
       </div>
-      <div class='span1'>
-        <a href='/' id='site' class='shadow'>
-          <img src='' id='logo'>
-        </a>
-      </div>
-    </div>
+      <div class='span1'></div>
   </body>
 </html>
 

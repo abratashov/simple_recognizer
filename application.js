@@ -1,5 +1,5 @@
 var codes = {
-    '13': '\n', // 'Enter' - new line
+    '13': '<br>', // 'Enter' - new line
     '32': ' ', // 'Space' - space
 
     '126': '~',
